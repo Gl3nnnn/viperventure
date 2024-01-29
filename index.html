@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.jpg" type="image/png">
+
+    <title>Viper Venture</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <h1 class="game-title"><i ></i> Viper Venture</h1>
+
+
+        <div class="game-details">
+            <span class="score"><i class="fas fa-star"></i> Score: 0</span>
+            <span class="high-score"><i class="fas fa-gem"></i> High Score: 0</span>
+            <!-- Add more game details or information here as needed -->
+        </div>
+
+        <div class="play-board"></div>
+
+        <div class="controls">
+            <i data-key="ArrowLeft" class="fa-solid fa-arrow-left-long"></i>
+            <i data-key="ArrowUp" class="fa-solid fa-arrow-up-long"></i>
+            <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
+            <i data-key="ArrowDown" class="fa-solid fa-arrow-down-long"></i>
+            <!-- You can add more controls or buttons for additional features -->
+        </div>
+
+        <button class="instructions-button" onclick="showInstructions()">Show Instructions</button>
+        <div class="loading-spinner" id="loadingSpinner"></div>
+
+    </div>
+
+    
+    <div class="overlay" id="instructionsOverlay">
+        <div class="modal">
+            <h2>Instructions</h2>
+            <p>Use arrow keys to control the snake. Eat the food to grow and earn points. Avoid collisions with walls and yourself!</p>
+            <button onclick="closeInstructions()">Close</button>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+    <script>
+ 
+        function showInstructions() {
+            document.getElementById("instructionsOverlay").style.display = "block";
+        }
+
+      
+        function closeInstructions() {
+            document.getElementById("instructionsOverlay").style.display = "none";
+        }
+
+        function simulateGameLoading() {
+            document.getElementById("loadingSpinner").style.display = "block";
+            setTimeout(function () {
+                document.getElementById("loadingSpinner").style.display = "none";
+            }, 2000); 
+        }
+
+     
+        simulateGameLoading();
+    </script>
+</body>
+
+</html>
